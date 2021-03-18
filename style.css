@@ -1,0 +1,260 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
+:root{
+    --overlay-color: #03f4;
+}
+
+@keyframes arrow{
+    0%{
+        transform: translateY(0)
+    }
+    50%{
+        transform: translateY(-20px)
+    }
+    100%{
+        transform: translateY(0)
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    color: #fff;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.showcase.active{
+    right: 300px;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu ul{
+    position: relative;
+    list-style: none;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-size: 27px;
+    color: #111;
+}
+
+.menu ul li a:hover{
+    color: var(--overlay-color)
+}
+
+.showcase video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color); 
+    mix-blend-mode: overlay;
+}
+
+.showcase header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url('src/list.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+}
+
+.toggle.active{
+    background: url('src/close.png');
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center;
+    cursor: pointer;
+}
+
+.text{
+    position: relative;
+    z-index: 10 ;
+}
+
+.text h2{
+    font-size: 5em;
+    font-weight: 800;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text h3{
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text p{
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.2em;
+    margin: 20px 0;
+    max-width: 700px;
+}
+
+.text a{
+    display: inline-block;
+    font-size: 1.5em;
+    background: white;
+    padding: 10px 30px;
+    color: #111;
+    text-decoration: none;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.text a:hover{
+    letter-spacing: 6px;
+    margin: 5px;
+    background-color: var(--overlay-color);
+    color: white;
+}
+
+.text a:active{
+    transform: scale(0.9);
+}
+
+.social{
+    position: absolute;
+    bottom: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social li{
+    list-style-type: none;
+    margin-right: 20px;
+    transform: scale(0.7);
+    transition: 0.5s;
+}
+
+.social li:hover{
+    transform: scale(0.8) translateY(-10px);
+}
+
+.copyright a{
+    color: yellow;
+}
+
+.copyright{
+    z-index: 1000;
+    text-align: center;;
+}
+
+.arrow{
+    animation: arrow 1s infinite;
+}
+
+@media(max-width: 911px) {
+    .showcase, .showcase header{
+        padding: 20px;
+    }
+
+    .text h2 {
+        font-size: 2em;
+    }
+
+    .text h3{
+        font-size: 1.5em;
+    }
+
+    .text p{
+        font-size: 0.8em;
+    }
+
+    .text a{
+        font-size: 1.2em;
+    }
+
+    .toggle{
+        transform: scale(0.7);
+    }
+
+    .showcase.active{
+        right: 180px;
+    }
+
+    .menu{
+        width: 180px
+    }
+
+    .menu ul li a{
+        font-size: 20px;
+    }
+
+    .copyright{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size:0.5em;
+    }
+
+    .arrow{
+        width: 30px;
+    }
+}
